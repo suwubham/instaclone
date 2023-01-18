@@ -7,4 +7,5 @@ export default interface User {
   lastName: string;
   sex: string;
   username: string;
+  id? : number;
 }

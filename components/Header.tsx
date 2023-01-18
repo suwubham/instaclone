@@ -15,7 +15,7 @@ import profilepic from "../assets/profilepic.png";
 
 function Header() {
   return (
-    <div className="shadow-sm border-b sticky bg-white z-50">
+    <div className="shadow-sm border-b sticky bg-white w-screen top-0 z-50">
       <nav className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
         {/* Left */}
         <div className="relative hidden lg:inline w-24 cursor-pointer">

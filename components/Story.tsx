@@ -1,5 +1,5 @@
 import React from "react";
-import User from "../helpers/User.type";
+import User from "../types/User.type";
 
 function Story({ profile }: { profile: User }) {
   return (

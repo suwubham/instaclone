@@ -1,6 +1,7 @@
 import React from "react";
 import Stories from "./Stories";
 import Posts from "./Posts";
+import MiniProfile from "./MiniProfile";
 
 export default function Feed() {
   return (
@@ -14,6 +15,7 @@ export default function Feed() {
 
       <section>
         {/* miniprofile */}
+        <MiniProfile />
         {/* suggestions */}
       </section>
     </main>

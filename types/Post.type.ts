@@ -3,4 +3,6 @@ export default interface Post{
   image: string;
   caption: string;
   username: string;
+  profileimg: string;
+  [key: string]: any;
 }
