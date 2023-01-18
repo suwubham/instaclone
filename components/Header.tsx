@@ -18,12 +18,24 @@ function Header() {
     <div className="shadow-sm border-b sticky bg-white z-50">
       <nav className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
         {/* Left */}
-        <div className="relative hidden lg:inline-grid w-24 cursor-pointer">
-          <Image src={fulllogo} alt="insta logo" fill objectFit="contain" />
+        <div className="relative hidden lg:inline w-24 cursor-pointer">
+          <Image
+            src={fulllogo}
+            alt="insta logo"
+            className="object-contain" //maintain same aspect ratio
+            fill //fill the parent container
+            sizes="100%"
+          />
         </div>
 
         <div className="relative w-10 lg:hidden cursor-pointer">
-          <Image src={minilogo} alt="insta logo" fill objectFit="contain" />
+          <Image
+            src={minilogo}
+            alt="insta logo"
+            fill
+            className="object-contain"
+            sizes="100%"
+          />
         </div>
 
         {/* Middle */}
@@ -46,7 +58,7 @@ function Header() {
             <div className="absolute -top-1 -right-2 text-xs rounded-full w-5 h-5 bg-red-500 flex justify-center items-center animate-pulse text-white">
               3
             </div>
-            <PaperAirplaneIcon className="navBtn -rotate-45" />
+            <PaperAirplaneIcon className="-rotate-45" />
           </div>
 
           <PlusCircleIcon className="navBtn" />
@@ -56,7 +68,7 @@ function Header() {
           <Image
             src={profilepic}
             alt="profile pic"
-            className="h-6 w-6 rounded-full cursor-pointer"
+            className="h-6 w-6 rounded-full cursor-pointer navBtn"
           />
         </div>
       </nav>
