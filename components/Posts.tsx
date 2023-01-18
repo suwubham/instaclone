@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Post from "./Post";
-import postgenerator from "../helpers/postgenerator";
+import postgenerator from "../utils/postgenerator";
 import PostType from "../types/Post.type";
 
 export default function Posts() {

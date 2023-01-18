@@ -15,28 +15,21 @@ import profilepic from "../assets/profilepic.png";
 
 function Header() {
   return (
-    <div className="shadow-sm border-b sticky bg-white w-screen top-0 z-50">
+    <div className="shadow-sm border-b fixed bg-white w-screen top-0">
       <nav className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
         {/* Left */}
-        <div className="relative hidden lg:inline w-24 cursor-pointer">
-          <Image
-            src={fulllogo}
-            alt="insta logo"
-            className="object-contain" //maintain same aspect ratio
-            fill //fill the parent container
-            sizes="100%"
-          />
-        </div>
 
-        <div className="relative w-10 lg:hidden cursor-pointer">
-          <Image
-            src={minilogo}
-            alt="insta logo"
-            fill
-            className="object-contain"
-            sizes="100%"
-          />
-        </div>
+        <Image
+          src={fulllogo}
+          alt="insta logo"
+          className="object-contain w-24 hidden lg:inline cursor-pointer"
+        />
+
+        <Image
+          src={minilogo}
+          alt="insta logo"
+          className="object-contain w-10 lg:hidden cursor-pointer"
+        />
 
         {/* Middle */}
         <div className="mt-1 relative p-3 max-w-xs">
@@ -68,7 +61,8 @@ function Header() {
           <Image
             src={profilepic}
             alt="profile pic"
-            className="h-6 w-6 rounded-full cursor-pointer navBtn"
+            className="h-10 w-10 rounded-full cursor-pointer navBtn"
+            priority
           />
         </div>
       </nav>

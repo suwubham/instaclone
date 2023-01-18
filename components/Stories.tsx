@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import generate from "../helpers/usergenerator";
+import generate from "../utils/usergenerator";
 import Story from "./Story";
 import User from "../types/User.type";
 
