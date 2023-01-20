@@ -11,9 +11,10 @@ import {
   Bars3Icon,
 } from "@heroicons/react/24/solid";
 import { HomeIcon } from "@heroicons/react/24/solid";
-import profilepic from "../assets/profilepic.png";
+import { signIn, useSession, signOut } from "next-auth/react";
 
 function Header() {
+  const { data: session }: any = useSession();
   return (
     <div className="shadow-sm border-b fixed bg-white w-screen top-0">
       <nav className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
@@ -43,28 +44,39 @@ function Header() {
           />
         </div>
 
-        {/* Right */}
-        <div className="flex items-center justify-end gap-4">
-          <HomeIcon className="navBtn" />
-          <Bars3Icon className="w-6 h-6 text-gray-500 md:hidden" />
-          <div className="relative navBtn">
-            <div className="absolute -top-1 -right-2 text-xs rounded-full w-5 h-5 bg-red-500 flex justify-center items-center animate-pulse text-white">
-              3
+        {session ? (
+          <div className="flex items-center justify-end gap-4">
+            <HomeIcon className="navBtn" />
+            <Bars3Icon className="w-6 h-6 text-gray-500 md:hidden" />
+            <div className="relative navBtn">
+              <div className="absolute -top-1 -right-2 text-xs rounded-full w-5 h-5 bg-red-500 flex justify-center items-center animate-pulse text-white">
+                3
+              </div>
+              <PaperAirplaneIcon className="-rotate-45" />
             </div>
-            <PaperAirplaneIcon className="-rotate-45" />
+
+            <PlusCircleIcon className="navBtn" />
+            <UserGroupIcon className="navBtn" />
+            <HeartIcon className="navBtn" />
+
+            <img
+              src={session?.user.image}
+              alt="profile pic"
+              className="h-10 w-10 rounded-full cursor-pointer navBtn"
+              onClick={() => {
+                signOut();
+              }}
+            />
           </div>
-
-          <PlusCircleIcon className="navBtn" />
-          <UserGroupIcon className="navBtn" />
-          <HeartIcon className="navBtn" />
-
-          <Image
-            src={profilepic}
-            alt="profile pic"
-            className="h-10 w-10 rounded-full cursor-pointer navBtn"
-            priority
-          />
-        </div>
+        ) : (
+          <button
+            onClick={() => {
+              signIn();
+            }}
+          >
+            Sign in
+          </button>
+        )}
       </nav>
     </div>
   );
